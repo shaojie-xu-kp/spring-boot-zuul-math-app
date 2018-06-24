@@ -1,0 +1,49 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.shaojie.www'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+
+	compile('org.springframework.boot:spring-boot-starter')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly('org.projectlombok:lombok')
+
+	// https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka
+	compile group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.1.5.RELEASE'
+
+	// https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka-test
+	testCompile group: 'org.springframework.kafka', name: 'spring-kafka-test', version: '2.1.0.RELEASE'
+
+	// https://mvnrepository.com/artifact/org.apache.kafka/connect-json
+	compile group: 'org.apache.kafka', name: 'connect-json', version: '1.1.0'
+
+	// https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka-test
+	testCompile group: 'org.springframework.kafka', name: 'spring-kafka-test', version: '2.1.5.RELEASE'
+
+
+}
