@@ -10,7 +10,10 @@ To avoid distributed cache consistency issue, I programmed in the way that the c
 The flow is :  
 
 ```
-client make a request -> math calculation resource created -> publish the resource to topic -> all nodes subscribe the topic will have the cache updated
+client make a request 
+-> math calculation resource created 
+-> publish the resource to topic
+-> all nodes subscribe to the topic will have its own cache updated
 ```
 
 ## Getting Started
