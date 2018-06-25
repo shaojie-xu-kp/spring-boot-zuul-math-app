@@ -95,7 +95,10 @@ Headers: Accept: application/json
 
 To test the load balancer of api-gateway, kill one instance of math-app, say 8090, and repeat the previous test.
 The request will be dispatched to the live node. 
-Attention: the fist try of GET or POST might fail, second try will be ok.
+
+```
+Attention: the fist try of GET or POST might fail, second try will be ok, to avoid this issue, we need to enable Spring Eureka as a service discovery and registry server. 
+```
 
 Then to bring back the failed node to the current status as the live one, one thing needs to be done, change the groupid 
 
