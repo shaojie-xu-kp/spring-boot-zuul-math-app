@@ -4,8 +4,9 @@ It is composed of two projects
 1. api-gateway is the api gateway project will is client facing and acting as a load balancer as well
 2. math-app is the math service application, a backend project, will be accessd by api-gateway
 
-## Getting Started
+The request will first hit api-gateway, and will be dispatched to one of the live node of math-app
 
+## Getting Started
 
 
 ### Prerequisites
