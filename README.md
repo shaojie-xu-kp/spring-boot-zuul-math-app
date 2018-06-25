@@ -6,7 +6,8 @@ It is composed of two projects
 
 The request will first hit api-gateway, and will be dispatched to one of the live node of math-app
 Kafka is added into this project to act as the message broker to synchronize the cache of both nodes. 
-To avoid distributed cache consistency issue, I programmed in the way that the cache will be updated only by Kafka topic update, not by the client request. 
+To avoid distributed cache consistency issue, I programmed in the way that the cache will be updated only by Kafka topic update, to archieve an eventual consistency. 
+
 The flow is :  
 
 ```
