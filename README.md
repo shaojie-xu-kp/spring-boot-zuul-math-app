@@ -85,7 +85,7 @@ To test the load balancer of api-gateway, kill one instance of math-app, say 809
 The request will be dispatched to the live node. 
 Attention: the fist try of GET or POST might fail, second try will be ok.
 
-Then to bring bak the failed node to the current status as the live node, one thing needs to be done, change the groupid 
+Then to bring back the failed node to the current status as the live one, one thing needs to be done, change the groupid 
 
 ```
 server.port=8090
