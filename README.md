@@ -1,10 +1,10 @@
 # spring-boot-zuul-math-app
 
 It is composed of two projects
-1. api-gateway is the api gateway project will is client facing and acting as a load balancer as well
+1. api-gateway is the api gateway project will be client facing and acting as a load balancer as well
 2. math-app is the math service application, a backend project, will be accessd by api-gateway
 
-The request will first hit api-gateway, and will be dispatched to one of the live node of math-app
+The request will first hit api-gateway, and will be dispatched to one of the live node of math-app.
 Kafka is added into this project to act as the message broker to synchronize the cache of both nodes. 
 To avoid distributed cache consistency issue, I programmed in the way that the cache will be updated only by Kafka topic update, to archieve an eventual consistency. 
 
@@ -110,7 +110,7 @@ cd math-app
 gradle bootRun
 ```
 
-At the spin up phase, you will see it recieves all the messages from topic: 
+At the spin up phase, you will see it recieves all the messages from topic as below, by doing so, you are save to spin up any node that has failed and automatically upgraded to the latest status. 
 
 Examples:
 
